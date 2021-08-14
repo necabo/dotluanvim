@@ -1,3 +1,5 @@
+vim.opt.showmode = false
+
 require("lualine").setup {
     options = {
         section_separators = "",
