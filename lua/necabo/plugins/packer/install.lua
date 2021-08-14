@@ -39,5 +39,10 @@ return require("packer").startup {
             "windwp/nvim-autopairs",
             config = [[require "necabo.plugins.autopairs"]]
         }
+        use {
+            "hoob3rt/lualine.nvim",
+            requires = {"kyazdani42/nvim-web-devicons", opt = true},
+            config = [[require "necabo.plugins.lualine"]]
+        }
     end
 }
