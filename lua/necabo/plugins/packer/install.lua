@@ -44,5 +44,10 @@ return require("packer").startup {
             requires = {"kyazdani42/nvim-web-devicons", opt = true},
             config = [[require "necabo.plugins.lualine"]]
         }
+        use {
+            "lewis6991/gitsigns.nvim",
+            requires = {"nvim-lua/plenary.nvim"},
+            config = [[require "necabo.plugins.gitsigns"]]
+        }
     end
 }
