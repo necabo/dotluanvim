@@ -11,6 +11,7 @@ vim.opt.scrolloff = 1
 vim.opt.sidescrolloff = 5
 vim.opt.display = "lastline"
 vim.opt.listchars = {tab = "> ", trail = "-", extends = ">", precedes = "<", nbsp = "+"}
+vim.opt.shortmess:append {c = true}
 
 -- search
 vim.opt.ignorecase = true
