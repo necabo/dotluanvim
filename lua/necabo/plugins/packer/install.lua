@@ -49,5 +49,9 @@ return require("packer").startup {
             requires = {"nvim-lua/plenary.nvim"},
             config = [[require "necabo.plugins.gitsigns"]]
         }
+        use {
+            "b3nj5m1n/kommentary",
+            config = [[require "necabo.plugins.kommentary"]]
+        }
     end
 }
