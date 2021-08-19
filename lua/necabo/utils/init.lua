@@ -25,4 +25,13 @@ utils.create_augroup = function(autocmds, name)
     vim.cmd("augroup END")
 end
 
+utils.create_buffer_augroup = function(autocmds, name)
+    vim.cmd("augroup " .. name)
+    vim.cmd("autocmd! * <buffer>")
+    for _, autocmd in ipairs(autocmds) do
+        vim.cmd("autocmd " .. table.concat(autocmd, " "))
+    end
+    vim.cmd("augroup END")
+end
+
 return utils

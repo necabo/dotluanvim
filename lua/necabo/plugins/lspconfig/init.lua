@@ -1,6 +1,15 @@
-local nvim_lsp = require("lspconfig")
+local utils = require "necabo.utils"
+
+local nvim_lsp = require "lspconfig"
 
 local on_attach = function(client, bufnr)
+    if client.resolved_capabilities.document_formatting then
+        utils.create_buffer_augroup(
+            {{[[BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]}},
+            "necabo_format_on_save"
+        )
+    end
+
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
     local opts = {noremap = true, silent = true }
