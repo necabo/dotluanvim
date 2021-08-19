@@ -24,7 +24,8 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<leader>gf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
-local servers = {"rust_analyzer"}
+-- jdtls needs JDTLS_HOME set
+local servers = {"rust_analyzer", "jdtls"}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
