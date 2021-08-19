@@ -53,5 +53,9 @@ return require("packer").startup {
             "b3nj5m1n/kommentary",
             config = [[require "necabo.plugins.kommentary"]]
         }
+        use {
+            "blackCauldron7/surround.nvim",
+            config = [[require "necabo.plugins.surround"]]
+        }
     end
 }
