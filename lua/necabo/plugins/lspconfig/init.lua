@@ -5,7 +5,7 @@ local nvim_lsp = require "lspconfig"
 local on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_formatting then
         utils.create_buffer_augroup(
-            {{[[BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]}},
+            {{[[BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()]]}},
             "necabo_format_on_save"
         )
     end
