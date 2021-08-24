@@ -1,3 +1,5 @@
+vim.opt.signcolumn = "yes"
+
 require("gitsigns").setup {
     keymaps = {
         noremap = true,
