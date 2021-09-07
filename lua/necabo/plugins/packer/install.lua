@@ -61,7 +61,14 @@ return require("packer").startup {
         }
         use {
             "hoob3rt/lualine.nvim",
-            requires = {"kyazdani42/nvim-web-devicons", opt = true},
+            requires = {
+                {"kyazdani42/nvim-web-devicons", opt = true},
+                {
+                    "nvim-lua/lsp-status.nvim",
+                    requires = {"onsails/lspkind-nvim"},
+                    config = [[require "necabo.plugins.lsp-status"]],
+                },
+            },
             config = [[require "necabo.plugins.lualine"]]
         }
         use {
@@ -76,6 +83,10 @@ return require("packer").startup {
         use {
             "blackCauldron7/surround.nvim",
             config = [[require "necabo.plugins.surround"]]
+        }
+        use {
+            "onsails/lspkind-nvim",
+            config = [[require "necabo.plugins.lspkind"]]
         }
     end
 }

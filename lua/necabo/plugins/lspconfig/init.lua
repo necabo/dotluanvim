@@ -1,6 +1,7 @@
 local utils = require "necabo.utils"
 
 local nvim_lsp = require "lspconfig"
+local lsp_status = require "lsp-status"
 
 local on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_formatting then
@@ -11,6 +12,8 @@ local on_attach = function(client, bufnr)
     end
 
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+-- TODO: is this actually helpful or just straight up annoying?
+lsp_status.register_progress()
 
     local opts = {noremap = true, silent = true }
 
