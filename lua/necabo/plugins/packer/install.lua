@@ -13,8 +13,22 @@ return require("packer").startup {
         local use = use
         use "wbthomason/packer.nvim"
         use {
-            "hrsh7th/nvim-compe",
-            config = [[require "necabo.plugins.compe"]]
+            "hrsh7th/nvim-cmp",
+            requires = {
+                {"hrsh7th/cmp-buffer"},
+                {"hrsh7th/cmp-nvim-lsp"},
+                {"hrsh7th/cmp-nvim-lua"},
+                {"hrsh7th/cmp-path"},
+                {
+                    "saadparwaiz1/cmp_luasnip",
+                    requires = {
+                        "L3MON4D3/LuaSnip",
+                        "rafamadriz/friendly-snippets",
+                    }
+                },
+                {"onsails/lspkind-nvim"}
+            },
+            config = [[require "necabo.plugins.cmp"]]
         }
         use {
             "npxbr/gruvbox.nvim",
