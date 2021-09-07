@@ -94,5 +94,10 @@ return require("packer").startup {
             "steelsojka/pears.nvim",
             config = [[require "necabo.plugins.pears"]]
         }
+        use {
+            "RishabhRD/nvim-lsputils",
+            requires = {"RishabhRD/popfix"},
+            config = [[require "necabo.plugins.lsputils"]]
+        }
     end
 }
