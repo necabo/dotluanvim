@@ -57,7 +57,9 @@ return require("packer").startup {
         }
         use {
             "windwp/nvim-autopairs",
-            config = [[require "necabo.plugins.autopairs"]]
+            requires = {"hrsh7th/nvim-cmp"},
+            config = [[require "necabo.plugins.autopairs"]],
+            disable = true,
         }
         use {
             "hoob3rt/lualine.nvim",
@@ -87,6 +89,10 @@ return require("packer").startup {
         use {
             "onsails/lspkind-nvim",
             config = [[require "necabo.plugins.lspkind"]]
+        }
+        use {
+            "steelsojka/pears.nvim",
+            config = [[require "necabo.plugins.pears"]]
         }
     end
 }
