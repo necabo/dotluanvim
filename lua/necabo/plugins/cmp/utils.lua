@@ -23,6 +23,14 @@ M.map_super_tab = function(fallback)
     end
 end
 
+M.map_s = function(fallback)
+    if luasnip.expand_or_jumpable() or luasnip.jumpable(-1) then
+        vim.fn.feedkeys(t("s"), "n")
+    else
+        fallback()
+    end
+end
+
 M.entry_format = function(entry, vim_item)
     vim_item.kind = lspkind.presets.default[vim_item.kind]
     .. " "

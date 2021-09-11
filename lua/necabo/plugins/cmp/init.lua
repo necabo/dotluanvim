@@ -12,6 +12,7 @@ cmp.setup {
         ["<C-e>"] = cmp.mapping.close(),
         ["<C-j>"] = cmp.mapping(cmp_utils.map_tab, {"i", "s"}),
         ["<C-k>"] = cmp.mapping(cmp_utils.map_super_tab, {"i", "s"}),
+        ["s"] = cmp.mapping(cmp_utils.map_s, {"i", "s"}),
 
         ["<C-y>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
