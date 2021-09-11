@@ -10,8 +10,8 @@ cmp.setup {
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         -- TODO: find a suitable mapping: ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<tab>"] = cmp.mapping(cmp_utils.map_tab, {"i", "s"}),
-        ["<S-tab>"] = cmp.mapping(cmp_utils.map_super_tab, {"i", "s"}),
+        ["<C-j>"] = cmp.mapping(cmp_utils.map_tab, {"i", "s"}),
+        ["<C-k>"] = cmp.mapping(cmp_utils.map_super_tab, {"i", "s"}),
 
         ["<C-y>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
