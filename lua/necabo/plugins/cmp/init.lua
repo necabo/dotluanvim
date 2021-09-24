@@ -25,9 +25,9 @@ cmp.setup {
         end
     },
     sources = {
-        { name = "buffer" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "buffer" },
         { name = "path" }
     },
     formatting = {
@@ -38,9 +38,9 @@ cmp.setup {
 utils.create_augroup({{
 [[FileType lua lua require("cmp").setup.buffer {]],
 [[      sources = {                             ]],
-[[{         name = 'buffer' },                  ]],
 [[{         name = 'nvim_lua' },                ]],
 [[{         name = 'luasnip' },                 ]],
+[[{         name = 'buffer' },                  ]],
 [[{         name = 'path' }                     ]],
 [[      },                                      ]],
 [[}                                             ]],
