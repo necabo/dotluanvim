@@ -99,5 +99,10 @@ return require("packer").startup {
             requires = {"RishabhRD/popfix"},
             config = [[require "necabo.plugins.lsputils"]]
         }
+        use {
+            "kabouzeid/nvim-lspinstall",
+            requires = {"neovim/nvim-lspconfig"},
+            config = [[require "necabo.plugins.lspinstall"]]
+        }
     end
 }

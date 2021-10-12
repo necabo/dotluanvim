@@ -24,6 +24,15 @@ NOTE: This will likely cause some weird output as it's trying to compile Treesit
 There is currently no way to wait for these to finish but it also doesn't really matter if they don't.
 Treesitter will automatically finish setting itself up the first time you start Neovim.
 
+### Language server setup
+
+The built-in LSP client is just that: a client.
+It does not install nor update language servers for you.
+Ideally your package manager takes care of that.
+Some language servers however require manual installation which can be tedious; keeping those up to date even more so.
+
+To get the best of both worlds this setup uses a hybrid approach leaving installation of language servers to the user where possible but also providing an easy `:LspInstall <language>` command to install and update language servers not available in package managers.
+
 ## Why another configuration?
 
 Why another configuration in the first place?
