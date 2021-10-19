@@ -9,8 +9,7 @@ lsp_status.register_progress()
 
 vim.o.completeopt = "menuone,noselect"
 
--- pylsp plugins (arch): python-pyls-flake8, python-lsp-isort, python-lsp-black
-lspconfig_utils.setup_servers({"rust_analyzer", "clangd", "pylsp"})
+lspconfig_utils.setup_servers({"clangd", "pylsp"})
 lspinstall.setup_servers()
 
 require "necabo.plugins.lspconfig.lua"
