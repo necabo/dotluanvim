@@ -10,6 +10,12 @@ end
 
 _G["necabo"] = global
 
+function _G.P(value)
+    print(vim.inspect(value))
+    return value
+end
+
+
 utils.map = function(mode, lhs, rhs, opts)
     local options = {noremap = true}
     if opts then options = vim.tbl_extend("force", options, opts) end
