@@ -9,7 +9,9 @@ lsp_status.register_progress()
 
 vim.o.completeopt = "menuone,noselect"
 
-lspconfig_utils.setup_servers({"clangd", "pylsp"})
+lspconfig_utils.setup_servers({"clangd"})
 lspinstall.setup_servers()
 
 require "necabo.plugins.lspconfig.lua"
+require "necabo.plugins.lspconfig.pyright"
+require "necabo.plugins.lspconfig.efm"
