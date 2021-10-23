@@ -1,12 +1,13 @@
 local utils = require "necabo.utils"
 local telescope = require "telescope"
 
-local find_all_files_cmd = "<cmd>lua require(''telescope.builtin'').find_files({no_ignore = true, hidden = true})<cr>"
+local find_all_files_cmd = "<cmd>lua require('telescope.builtin').find_files({no_ignore = true, hidden = true})<cr>"
 
 utils.map(
-    "n", "<leader>ff",
-    "v:lua.necabo.is_git_repo() ? '<cmd>Telescope git_files<cr>' : '" .. find_all_files_cmd .. "'",
-    {expr = true}
+  "n",
+  "<leader>ff",
+  "v:lua.necabo.is_git_repo() ? '<cmd>Telescope git_files<cr>' : '" .. find_all_files_cmd:gsub("'", "''") .. "'",
+  { expr = true }
 )
 utils.map("n", "<leader>fa", find_all_files_cmd)
 utils.map("n", "<leader>frg", "<cmd>Telescope live_grep<cr>")
