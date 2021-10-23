@@ -6,6 +6,10 @@ require("lualine").setup {
         component_separators = ""
     },
     sections = {
+        lualine_b = {
+            "branch",
+            "diff"
+        },
         lualine_c = {
             {"diagnostics", sources = {"nvim_lsp"}, icon = "λ"},
             "vim.b.lsp_current_function",
