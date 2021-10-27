@@ -1,1 +1,1 @@
-require "necabo.plugins.packer.install"
+require("necabo.plugins.packer.install")

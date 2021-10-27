@@ -10,8 +10,8 @@ vim.opt.inccommand = "nosplit"
 vim.opt.scrolloff = 1
 vim.opt.sidescrolloff = 5
 vim.opt.display = "lastline"
-vim.opt.listchars = {tab = "> ", trail = "-", extends = ">", precedes = "<", nbsp = "+"}
-vim.opt.shortmess:append {c = true}
+vim.opt.listchars = { tab = "> ", trail = "-", extends = ">", precedes = "<", nbsp = "+" }
+vim.opt.shortmess:append({ c = true })
 vim.opt.updatetime = 250
 
 -- search

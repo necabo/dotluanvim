@@ -1,6 +1,6 @@
-local lspkind = require "lspkind"
+local lspkind = require("lspkind")
 
-require "lsp-status".config {
-    kind_labels = lspkind.presets.default,
-    status_symbol = "λ",
-}
+require("lsp-status").config({
+  kind_labels = lspkind.presets.default,
+  status_symbol = "λ",
+})

@@ -1,9 +1,9 @@
 -- Copyright (c) 2020-2021 shadmansaleh
 -- MIT license, see LICENSE for more details.
-local M = require('lualine.component'):extend()
+local M = require("lualine.component"):extend()
 
 local default_options = {
-  symbols = { modified = '[+]', readonly = '[-]' },
+  symbols = { modified = "[+]", readonly = "[-]" },
   file_status = true,
   path = 0,
   shorting_target = 40,
@@ -14,7 +14,7 @@ local default_options = {
 ---@param pattern string
 ---@return number
 local function count(base, pattern)
-  return select(2, string.gsub(base, pattern, ''))
+  return select(2, string.gsub(base, pattern, ""))
 end
 
 ---shortens path by turning apple/orange -> a/orange
@@ -23,29 +23,29 @@ end
 ---@return string
 local function shorten_path(path, sep)
   -- ('([^/])[^/]+%/', '%1/', 1)
-  return path:gsub(string.format('([^%s])[^%s]+%%%s', sep, sep, sep), '%1' .. sep, 1)
+  return path:gsub(string.format("([^%s])[^%s]+%%%s", sep, sep, sep), "%1" .. sep, 1)
 end
 
 M.init = function(self, options)
   M.super.init(self, options)
-  self.options = vim.tbl_deep_extend('keep', self.options or {}, default_options)
+  self.options = vim.tbl_deep_extend("keep", self.options or {}, default_options)
 end
 
 M.update_status = function(self)
   local data
   if self.options.path == 1 then
     -- relative path
-    data = vim.fn.expand '%:~:.'
+    data = vim.fn.expand("%:~:.")
   elseif self.options.path == 2 then
     -- absolute path
-    data = vim.fn.expand '%:p'
+    data = vim.fn.expand("%:p")
   else
     -- just filename
-    data = vim.fn.expand '%:t'
+    data = vim.fn.expand("%:t")
   end
 
-  if data == '' then
-    data = '[No Name]'
+  if data == "" then
+    data = "[No Name]"
   end
 
   if self.options.shorting_target ~= 0 then

@@ -1,4 +1,4 @@
 return {
-    formatCommand = "black --experimental-string-processing -",
-    formatStdin = true,
+  formatCommand = "black --experimental-string-processing -",
+  formatStdin = true,
 }

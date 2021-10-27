@@ -1,6 +1,6 @@
-local lsp_status = require "lsp-status"
-local lspconfig_utils = require "necabo.plugins.lspconfig.utils"
-local lspinstall = require "necabo.plugins.lspinstall"
+local lsp_status = require("lsp-status")
+local lspconfig_utils = require("necabo.plugins.lspconfig.utils")
+local lspinstall = require("necabo.plugins.lspinstall")
 
 -- TODO: is this actually helpful or just straight up annoying?
 lsp_status.register_progress()
@@ -9,9 +9,9 @@ lsp_status.register_progress()
 
 vim.o.completeopt = "menuone,noselect"
 
-lspconfig_utils.setup_servers({"clangd"})
+lspconfig_utils.setup_servers({ "clangd" })
 lspinstall.setup_servers()
 
-require "necabo.plugins.lspconfig.lua"
-require "necabo.plugins.lspconfig.pyright"
-require "necabo.plugins.lspconfig.efm"
+require("necabo.plugins.lspconfig.lua")
+require("necabo.plugins.lspconfig.pyright")
+require("necabo.plugins.lspconfig.efm")

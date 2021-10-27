@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
 
-require "necabo.utils"
-require "necabo.plugins"
-require "necabo.general"
+require("necabo.utils")
+require("necabo.plugins")
+require("necabo.general")
