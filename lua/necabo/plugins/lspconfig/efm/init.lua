@@ -1,7 +1,6 @@
 local lspconfig_utils = require("necabo.plugins.lspconfig.utils")
+local efm_utils = require("necabo.plugins.lspconfig.efm.utils")
 
-local black = require("necabo.plugins.lspconfig.efm.black")
-local isort = require("necabo.plugins.lspconfig.efm.isort")
 local flake8 = require("necabo.plugins.lspconfig.efm.flake8")
 
 local luacheck = require("necabo.plugins.lspconfig.efm.luacheck")
@@ -12,7 +11,11 @@ require("lspconfig").efm.setup({
   settings = {
     rootMarkers = { ".git/" },
     languages = {
-      python = { black, isort, flake8 },
+      python = {
+        efm_utils.if_enabled("black"),
+        efm_utils.if_enabled("isort"),
+        flake8,
+      },
       lua = { luacheck, stylua },
     },
   },
