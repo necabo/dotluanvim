@@ -15,16 +15,19 @@ local function read_custom_config_json()
   return local_config_table
 end
 
-M.if_enabled = function(tool_name)
+M.resolve_enabled_tools = function(tools)
   local custom_config = read_custom_config_json()
   if custom_config == nil then
     return {}
   end
 
-  if custom_config[tool_name .. "_enabled"] then
-    return require("necabo.plugins.lspconfig.efm." .. tool_name)
+  local resolved_tools = {}
+  for _, tool in ipairs(tools) do
+    if custom_config[tool .. "_enabled"] then
+      table.insert(resolved_tools, require("necabo.plugins.lspconfig.efm." .. tool))
+    end
   end
-  return {}
+  return resolved_tools
 end
 
 return M
