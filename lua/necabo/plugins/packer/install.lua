@@ -100,9 +100,9 @@ return require("packer").startup({
       config = [[require "necabo.plugins.lsputils"]],
     })
     use({
-      "kabouzeid/nvim-lspinstall",
+      "williamboman/nvim-lsp-installer",
       requires = { "neovim/nvim-lspconfig" },
-      config = [[require "necabo.plugins.lspinstall"]],
+      config = [[require "necabo.plugins.lsp-installer"]],
     })
     use({
       "simrat39/rust-tools.nvim",

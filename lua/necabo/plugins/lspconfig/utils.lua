@@ -59,15 +59,19 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
+M.make_default_config = function()
+    return {
+        on_attach = M.on_attach,
+        capabilities = M.capabilities,
+        flags = {
+            debounce_text_changes = 150,
+        },
+    }
+end
+
 M.setup_servers = function(servers)
   for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup({
-      on_attach = M.on_attach,
-      capabilities = M.capabilities,
-      flags = {
-        debounce_text_changes = 150,
-      },
-    })
+    nvim_lsp[lsp].setup(M.make_default_config())
   end
 end
 
