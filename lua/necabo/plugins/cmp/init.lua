@@ -35,18 +35,15 @@ cmp.setup({
   },
 })
 
-utils.create_augroup(
+utils.create_augroup({
   {
-    {
-      [[FileType lua lua require("cmp").setup.buffer {]],
-      [[      sources = {                             ]],
-      [[{         name = 'nvim_lua' },                ]],
-      [[{         name = 'luasnip' },                 ]],
-      [[{         name = 'buffer' },                  ]],
-      [[{         name = 'path' }                     ]],
-      [[      },                                      ]],
-      [[}                                             ]],
-    },
+    [[FileType lua lua require("cmp").setup.buffer {]],
+    [[      sources = {                             ]],
+    [[{         name = 'nvim_lua' },                ]],
+    [[{         name = 'luasnip' },                 ]],
+    [[{         name = 'buffer' },                  ]],
+    [[{         name = 'path' }                     ]],
+    [[      },                                      ]],
+    [[}                                             ]],
   },
-  "necabo_setup_lua_cmp"
-)
+}, "necabo_setup_lua_cmp")
