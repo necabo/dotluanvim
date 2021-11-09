@@ -109,5 +109,9 @@ return require("packer").startup({
       requires = { "neovim/nvim-lspconfig" },
       config = [[require "necabo.plugins.lspconfig.rust-tools"]],
     })
+    use({
+      "mfussenegger/nvim-jdtls",
+      config = [[require "necabo.plugins.lspconfig.jdtls"]],
+    })
   end,
 })

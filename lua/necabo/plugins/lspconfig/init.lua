@@ -12,7 +12,7 @@ vim.o.completeopt = "menuone,noselect"
 lspconfig_utils.setup_servers({ "clangd" })
 
 lsp_installer.ensure_servers_installed({ "jdtls" })
-lsp_installer.setup_servers({ "jdtls" })
+lsp_installer.setup_servers({})
 
 require("necabo.plugins.lspconfig.lua")
 require("necabo.plugins.lspconfig.pyright")
