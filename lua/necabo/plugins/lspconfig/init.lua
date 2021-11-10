@@ -1,3 +1,4 @@
+require("wsconfig").setup({})
 local lsp_status = require("lsp-status")
 local lspconfig_utils = require("necabo.plugins.lspconfig.utils")
 local lsp_installer = require("necabo.plugins.lsp-installer")
