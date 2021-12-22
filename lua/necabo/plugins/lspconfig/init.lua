@@ -10,7 +10,8 @@ lsp_status.register_progress()
 
 vim.o.completeopt = "menuone,noselect"
 
-lspconfig_utils.setup_servers({ "clangd" })
+-- texlab requires 'texlive-latexindent-meta' for latexindent to be available
+lspconfig_utils.setup_servers({ "clangd", "texlab" })
 
 lsp_installer.ensure_servers_installed({ "jdtls" })
 lsp_installer.setup_servers({})
