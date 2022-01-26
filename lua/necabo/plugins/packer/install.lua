@@ -117,5 +117,9 @@ return require("packer").startup({
       "~/projects/wsconfig.nvim",
       requires = { "neovim/nvim-lspconfig" },
     })
+    use({
+      "j-hui/fidget.nvim",
+      config = [[require "fidget".setup{}]],
+    })
   end,
 })

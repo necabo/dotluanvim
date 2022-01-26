@@ -1,10 +1,6 @@
 require("wsconfig").setup({})
-local lsp_status = require("lsp-status")
 local lspconfig_utils = require("necabo.plugins.lspconfig.utils")
 local lsp_installer = require("necabo.plugins.lsp-installer")
-
--- TODO: is this actually helpful or just straight up annoying?
-lsp_status.register_progress()
 
 -- TODO: add keybindings to scroll in and close floating windows
 
