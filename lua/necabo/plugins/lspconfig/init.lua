@@ -6,12 +6,14 @@ local lsp_installer = require("necabo.plugins.lsp-installer")
 
 vim.o.completeopt = "menuone,noselect"
 
--- texlab requires 'texlive-latexindent-meta' for latexindent to be available
-lspconfig_utils.setup_servers({ "clangd", "texlab" })
+-- setup servers installed outside nvim
+lspconfig_utils.setup_servers({ "clangd" })
 
-lsp_installer.ensure_servers_installed({ "jdtls" })
-lsp_installer.setup_servers({})
+lsp_installer.ensure_servers_installed({ "jdtls", "ltex" })
+-- setup servers installed using nvim-lsp-installer
+lsp_installer.setup_servers({ "ltex" })
 
 require("necabo.plugins.lspconfig.lua")
 require("necabo.plugins.lspconfig.pyright")
 require("necabo.plugins.lspconfig.efm")
+require("necabo.plugins.lspconfig.texlab")
