@@ -42,7 +42,7 @@ M.on_attach = function(client, bufnr)
   if client.resolved_capabilities.document_highlight then
     utils.create_buffer_augroup({
       { [[CursorHold <buffer> lua vim.lsp.buf.document_highlight()]] },
-      { [[CursorMoved <buffer> lua vim.lsp.buf.clear_references()]] },
+      { [[CursorMoved,BufLeave <buffer> lua vim.lsp.buf.clear_references()]] },
     }, "necabo_highlight_references_below_cursor")
   end
 
