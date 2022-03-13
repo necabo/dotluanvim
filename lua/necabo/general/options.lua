@@ -13,6 +13,7 @@ vim.opt.display = "lastline"
 vim.opt.listchars = { tab = "> ", trail = "-", extends = ">", precedes = "<", nbsp = "+" }
 vim.opt.shortmess:append({ c = true })
 vim.opt.updatetime = 250
+vim.g.tex_flavor = "latex"
 
 -- search
 vim.opt.ignorecase = true
