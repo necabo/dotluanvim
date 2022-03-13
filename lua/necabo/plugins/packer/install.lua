@@ -114,7 +114,7 @@ return require("packer").startup({
       config = [[require "necabo.plugins.lspconfig.jdtls"]],
     })
     use({
-      "~/projects/wsconfig.nvim",
+      "tamago324/nlsp-settings.nvim",
       requires = { "neovim/nvim-lspconfig" },
     })
     use({
