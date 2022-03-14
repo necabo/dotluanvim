@@ -121,5 +121,9 @@ return require("packer").startup({
       "j-hui/fidget.nvim",
       config = [[require "fidget".setup{}]],
     })
+    use({
+      "mickael-menu/zk-nvim",
+      config = [[require"necabo.plugins.zk"]],
+    })
   end,
 })
